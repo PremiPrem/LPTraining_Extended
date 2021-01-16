@@ -3,9 +3,9 @@ package com.lptraining.election;
 import com.lptraining.exception.AccessDeniedException;
 
 
-public class VoteAccess {
+public class VoteAgeVerification {
 	
-	public VoteAccess() {
+	public VoteAgeVerification() {
 		
 	}
 	

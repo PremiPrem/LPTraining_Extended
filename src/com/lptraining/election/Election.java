@@ -16,7 +16,7 @@ public class Election {
 					System.err.println(e);
 				}
 				
-				VoteAccess voteAccess = new VoteAccess();
+				VoteAgeVerification voteAccess = new VoteAgeVerification();
 				try{
 					voteAccess.access(15);
 					
@@ -25,7 +25,7 @@ public class Election {
 				}
 				
 			
-	               Voting voting= new Voting();
+	               VotingTask voting= new VotingTask();
 	                     try{
 		                   voting.verify("6754E");			
 		
