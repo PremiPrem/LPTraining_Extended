@@ -11,7 +11,7 @@ public class VotingTask {
 		if(vId.equals("5643T")) {
 			return new Voter();
 		} else {
-			throw new IllegalVotingException("Already voted for " + vId);
+			throw new IllegalVotingException("Already voted for " +  vId );
 		}
 
 }
