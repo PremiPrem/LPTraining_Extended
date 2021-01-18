@@ -12,35 +12,24 @@ public class Election {
 		
 	
 			VoterPermission voter= new VoterPermission();
+			VoteAgeVerification voteAccess = new VoteAgeVerification();
+			 VotingTask voting= new VotingTask();
+			 Voter v= new Voter();
 				try{
-					voter.authenticate("123456789");			
-					
-				} catch(UserNotFoundException e) {
-					e.printStackTrace();
-				}
-				
-				VoteAgeVerification voteAccess = new VoteAgeVerification();
-				try{
+					voter.authenticate("123456789");
 					voteAccess.access(15);
-					
-				} catch(AccessDeniedException e) {
-//					System.err.println(e);
+					voting.verify("6754E");
+					 v.verify("6754E");
+					 } catch(UserNotFoundException e) {
+					System.err.println("Invalid NIC Number");
 					e.printStackTrace();
-				}
-				
-			
-	               VotingTask voting= new VotingTask();
-	                     try{
-		                   voting.verify("6754E");			
-		
-	               } catch(IllegalVotingException e) {
+					 } catch(AccessDeniedException e) {
+					System.err.println("You must above 18 to vote");
+					e.printStackTrace();
+					 } catch(IllegalVotingException e) {
 	            	   e.printStackTrace();
-	                                                       }
-	                     Voter v= new Voter();
-	                     try{
-		                   v.verify("6754E");			
-		
-	               } catch(InvalidProcessException e) {
+	                 } catch(InvalidProcessException e) {
+	            	    System.err.println("This ID already performed voting"); 
 	            	   e.printStackTrace();
 	                                                       }
                                                     }

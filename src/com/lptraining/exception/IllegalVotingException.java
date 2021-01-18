@@ -12,6 +12,7 @@ public class IllegalVotingException  extends Exception{
 		public IllegalVotingException (String text) {
 			super(text);
 		}
+		
 	}
 
 

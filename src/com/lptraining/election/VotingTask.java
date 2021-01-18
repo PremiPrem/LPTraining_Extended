@@ -10,7 +10,7 @@ public class VotingTask {
 	public Voter verify(String vId) throws IllegalVotingException{
 		if(vId.equals("5643T")) {
 			return new Voter();
-		} else {
+		} else{
 			throw new IllegalVotingException("Already voted for " +  vId );
 		}
 
