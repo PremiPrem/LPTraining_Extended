@@ -1,43 +1,46 @@
 package com.lptraining.election;
 
-import com.lptraining.exception.AccessDeniedException;
-import com.lptraining.exception.IllegalVotingException;
-import com.lptraining.exception.InvalidProcessException;
-import com.lptraining.exception.UserNotFoundException;
+
+
+import java.util.Scanner;
+
+import com.lptraining.exception.VotingPermissionDeniedException;
+
 
 public class Election {
+	private static Scanner sc;
 
 	public static void main(String[] args) {
-		
-		
-	
-			VoterPermission voter= new VoterPermission();
-			VoteAgeVerification voteAccess = new VoteAgeVerification();
-			 VotingTask voting= new VotingTask();
-			 Voter v= new Voter();
-				try{
-					voter.authenticate("123456789");
-					voteAccess.access(15);
-					voting.verify("6754E");
-					 v.verify("6754E");
-					 } catch(UserNotFoundException e) {
-					System.err.println("Invalid NIC Number");
-					e.printStackTrace();
-					 } catch(AccessDeniedException e) {
-					System.err.println("You must above 18 to vote");
-					e.printStackTrace();
-					 } catch(IllegalVotingException e) {
-	            	   e.printStackTrace();
-	                 } catch(InvalidProcessException e) {
-	            	    System.err.println("This ID already performed voting"); 
-	            	   e.printStackTrace();
-	                                                       }
-                                                    }
-	
-                                      }
-
+		try {
+			sc = new Scanner(System.in);
+			System.out.println("Please enter the Voter Id number");
+			int vId = sc.nextInt();
+			sc = new Scanner(System.in);
+			System.out.println("Please enter NIC");
+			String NIC = sc.nextLine();
+			sc = new Scanner(System.in);
+			System.out.println("Please enter your  your Age");
+			int age = sc.nextInt();
 			
-		
+			 ElectionOfficer voting= new ElectionOfficer();
+		    int voterDetail = voting.calculateVoterCount(vId, NIC, age);
+			System.out.print(voterDetail);
+		    VoterPermission availableVote =new   VoterPermission();
+		    availableVote.calculateVoterCount(NIC);
+		 
+		    VoteAgeVerification availableAge =new   VoteAgeVerification();
+		    availableAge.checkAge(age);
+				
+
+					
+		} 
+		catch(VotingPermissionDeniedException e) {
+	            	   e.printStackTrace();
+	            	   System.err.println( " Voting cannot proceed  " + e );	            
+	            	   }
+	}
+}
+	                     
 
 	
 

@@ -1,13 +1,14 @@
 package com.lptraining.exception;
 
-public class InvalidProcessException extends RuntimeException{
+public class InvalidProcessException extends VotingPermissionDeniedException{
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 1L;
-
-	public InvalidProcessException(String message, Exception exception){
-        super(message, exception);
+	public InvalidProcessException(String message){
+		super(message);
+	 }
+    public InvalidProcessException(String message, Throwable cause) {
+        super();
     }
 
 

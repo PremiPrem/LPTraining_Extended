@@ -2,7 +2,7 @@ package com.lptraining.election;
 
 import com.lptraining.exception.IllegalVotingException;
 
-public class VotingTask {
+public class VotingTask extends Election {
 	public VotingTask()  {
 		
 	}

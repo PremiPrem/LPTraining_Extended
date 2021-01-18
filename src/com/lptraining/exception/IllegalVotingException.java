@@ -1,18 +1,18 @@
 package com.lptraining.exception;
 
-public class IllegalVotingException  extends Exception{
-		/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
-		/**
-	 * 
-	 */
+public class IllegalVotingException  extends VotingPermissionDeniedException {
 
-		public IllegalVotingException (String text) {
-			super(text);
-		}
+	
+	private static final long serialVersionUID = 1L;
+	
+	public IllegalVotingException(){		
+		super();
 		
 	}
-
+	public IllegalVotingException(String message){
+		super(message);
+	 }
+    public IllegalVotingException(String message, Throwable cause) {
+        super(message, cause);
+    }
 

@@ -1,14 +1,21 @@
 package com.lptraining.exception;
 
-public class AccessDeniedException extends Exception {
+public class AccessDeniedException extends VotingPermissionDeniedException {
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 6183912056272154671L;
+	
+		private static final long serialVersionUID = 1L;
+		
+		public AccessDeniedException(){		
+			super();
+			
+		}
+		public AccessDeniedException(String message){
+			super(message);
+		 }
+	    public AccessDeniedException(String message, Throwable cause) {
+	        super(message, cause);
+	    }
 
-	public AccessDeniedException(String message) {
-		super(message);
-		// TODO Auto-generated constructor stub
 	}
-}
+
+

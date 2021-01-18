@@ -3,26 +3,20 @@ package com.lptraining.election;
 import com.lptraining.exception.AccessDeniedException;
 
 
-public class VoteAgeVerification {
+public class VoteAgeVerification  {
 	
-	public VoteAgeVerification() {
+	public void checkAge(int age)throws AccessDeniedException{
+	if(age < 18) 
+		throw new AccessDeniedException("Cannot perform Voting at " + age);
 		
+	
+	
 	}
-	
-		
-		public Voter access(int age) throws AccessDeniedException{
-			if(age > 18) 
-			{
-				return new Voter();
-			} else {
-				
-				throw new AccessDeniedException("Cannot perform Voting at " + age);
-			}
 			
 		}
 		
 
-}
+
 
 		
 	

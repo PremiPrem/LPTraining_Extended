@@ -1,19 +1,31 @@
 package com.lptraining.election;
 
 import com.lptraining.exception.InvalidProcessException;
+import com.lptraining.exception.UserNotFoundException;
 
-public class Voter {
-	
-	
-	
-	public Voter verify(String vId) throws InvalidProcessException{
-		if(vId.equals("5643T")) {
-			return new Voter();
-		} else {
-			throw new InvalidProcessException("Invalid Voting Process for  " + vId);
-		}
 
+public class Voter extends ElectionOfficer {
+	
+	
+	private String voterName;
+
+	
+
+	public String calculatedVote(int voterId) throws InvalidProcessException {
+	      try { 
+			VoterPermission voteCheck =  new VoterPermission();
+			voteCheck.calculateVoterCount((String) voterName);
+		
+              }
+	      
+	      catch(UserNotFoundException e) {
+	    	  
+	    	  throw new InvalidProcessException( "You can't use same ID twice");
+	      
+	      }
+	      return voterName;
+	      }
 }
 	
 
-}
+
