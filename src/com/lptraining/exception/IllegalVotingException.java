@@ -12,7 +12,8 @@ public class IllegalVotingException  extends VotingPermissionDeniedException {
 	public IllegalVotingException(String message){
 		super(message);
 	 }
-    public IllegalVotingException(String message, Throwable cause) {
+    public IllegalVotingException(String message, Exception cause) {
         super(message, cause);
     }
+}
 

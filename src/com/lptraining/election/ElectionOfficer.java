@@ -1,13 +1,14 @@
 package com.lptraining.election;
 
 
-import com.lptraining.exception.IllegalVotingException;
+
 import com.lptraining.exception.InvalidProcessException;
+import com.lptraining.exception.VotingPermissionDeniedException;
 
 
 public class ElectionOfficer extends Election {
 	protected int voterCount;
-	public int calculateVoterCount(int voterId,String NIC,int age)throws IllegalVotingException{
+	public int calculateVoterCount(int voterId,String NIC,int age)throws VotingPermissionDeniedException{
 		try{
 			
 	        Voter voter = new Voter();
@@ -20,7 +21,7 @@ public class ElectionOfficer extends Election {
 		}
 		catch(InvalidProcessException e) {
 		    
-			throw new IllegalVotingException("Voting can't perform.This ID already performed voting" + e);
+			throw new VotingPermissionDeniedException("Voting can't perform.This ID already performed voting" , e);
 		}
 		
 		return voterCount;

@@ -7,7 +7,7 @@ public class VoteAgeVerification  {
 	
 	public void checkAge(int age)throws AccessDeniedException{
 	if(age < 18) 
-		throw new AccessDeniedException("Cannot perform Voting at " + age);
+		throw new AccessDeniedException("Cannot perform Voting at "+ age);
 		
 	
 	

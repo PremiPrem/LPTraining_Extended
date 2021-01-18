@@ -12,7 +12,7 @@ public class UserNotFoundException extends VotingPermissionDeniedException {
 		public UserNotFoundException(String message){
 			super(message);
 		 }
-	    public UserNotFoundException(String message, Throwable cause) {
+	    public UserNotFoundException(String message, Exception cause) {
 	        super(message, cause);
 	    }
 	

@@ -11,8 +11,8 @@ public class VotingPermissionDeniedException extends Exception {
 	public VotingPermissionDeniedException(String message){
 		super(message);
 	 }
-    public VotingPermissionDeniedException(String message, Throwable cause) {
-        super();
+    public VotingPermissionDeniedException(String message, Exception cause) {
+        super(message,cause);
     }
 
 }

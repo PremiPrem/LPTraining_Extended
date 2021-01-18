@@ -12,7 +12,7 @@ public class AccessDeniedException extends VotingPermissionDeniedException {
 		public AccessDeniedException(String message){
 			super(message);
 		 }
-	    public AccessDeniedException(String message, Throwable cause) {
+	    public AccessDeniedException(String message, Exception cause) {
 	        super(message, cause);
 	    }
 

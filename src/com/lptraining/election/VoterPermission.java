@@ -23,7 +23,7 @@ public int calculateVoterCount(String vote)throws UserNotFoundException{
 	}
 	catch(VotingPermissionDeniedException e) {
 	    
-		throw new UserNotFoundException("NIC Verification Succeed" + e);
+		throw new UserNotFoundException("NIC Verification Succeed" ,e);
 	}
 	
 	return voterCount;
